@@ -1,6 +1,10 @@
 variable "vsphere_user" {}
 variable "vsphere_password" {}
 variable "vsphere_server" {}
+variable "env" {
+  type = "string"
+  default = "test"
+}
 
 provider "vsphere" {
   user           = "${var.vsphere_user}"
@@ -10,7 +14,7 @@ provider "vsphere" {
 }
 
 resource "vsphere_virtual_machine" "web" {
-  count = "2"
+  count = "${var.env == "prodution" ? "2" : "0"}"
   name = "terraform-web-${count.index}"
   vcpu = "1"
   memory = "512"
