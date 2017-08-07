@@ -11,7 +11,10 @@ resource "vsphere_virtual_machine" "web" {
   memory = "512"
   datacenter = "taiping"
   cluster = "production"
-  count = "${var.env == "prodution" ? "0" : "3"}"
+  count = "${var.env == "prodution" ? "3" : "0"}"
+  time_zone = "Asia/Taipei"
+  domain = "cvl.com.tw"
+  dns_servers = "${var.dns_servers}"
 
   network_interface {
     label = "vlan515"
