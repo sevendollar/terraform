@@ -1,11 +1,3 @@
-variable "vsphere_user" {}
-variable "vsphere_password" {}
-variable "vsphere_server" {}
-variable "env" {
-  type = "string"
-  default = "test"
-}
-
 provider "vsphere" {
   user           = "${var.vsphere_user}"
   password       = "${var.vsphere_password}"
