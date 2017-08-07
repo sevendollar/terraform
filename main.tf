@@ -6,16 +6,17 @@ provider "vsphere" {
 }
 
 resource "vsphere_virtual_machine" "web" {
-  count = "${var.env == "prodution" ? "2" : "0"}"
   name = "terraform-web-${count.index}"
   vcpu = "1"
   memory = "512"
   datacenter = "taiping"
   cluster = "production"
+  count = "${var.env == "prodution" ? "0" : "3"}"
 
   network_interface {
     label = "vlan515"
   }
+
   disk {
     template = "vagrant-templates/base-ubuntu-wily-taiping"
     type = "thin"
