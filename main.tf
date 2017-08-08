@@ -11,10 +11,10 @@ resource "vsphere_virtual_machine" "web" {
   memory = "512"
   datacenter = "taiping"
   cluster = "production"
-  count = "${var.env == "prodution" ? "3" : "0"}"
+  count = "${var.env == "prodution" ? "2" : "0"}"
   time_zone = "Asia/Taipei"
   domain = "cvl.com.tw"
-  dns_servers = "${var.dns_servers}"
+  dns_servers = "${var.dns}"
 
   network_interface {
     label = "vlan515"
@@ -25,4 +25,13 @@ resource "vsphere_virtual_machine" "web" {
     type = "thin"
     datastore = "tp_NetApp_flra_vmware"
   }
+}
+
+
+output "name" {
+  value = "${vsphere_virtual_machine.web.name}"
+}
+
+output "uuid" {
+  value = "${vsphere_virtual_machine.web.uuid}"
 }

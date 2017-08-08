@@ -1,10 +1,21 @@
 variable "vsphere_user" {}
 variable "vsphere_password" {}
 variable "vsphere_server" {}
+
 variable "env" {
+  description = "test or prodution enviroment"
   type = "string"
-  default = "prodution"
 }
-variable "dns_servers" {
+
+variable "dns" {
   type = "list"
-  default = ["8.8.8.8", "8.8.4.4"]}
+  default = ["8.8.8.8", "168.95.1.1"]
+}
+
+variable "map_thing" {
+  type = "map"
+  default = {
+    "a" = "1"
+    "b" = "2"
+  }
+}
