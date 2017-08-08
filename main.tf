@@ -9,5 +9,5 @@ module "web" {
   source = "github.com/sevendollar/terraform/web"
 
   region = "taiping"
-  env = "test"
+#  env = "test"
 }
