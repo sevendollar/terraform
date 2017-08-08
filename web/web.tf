@@ -1,15 +1,8 @@
-provider "vsphere" {
-  user           = "${var.vsphere_user}"
-  password       = "${var.vsphere_password}"
-  vsphere_server = "${var.vsphere_server}"
-  allow_unverified_ssl = true
-}
-
 resource "vsphere_virtual_machine" "web" {
-  name = "terraform-web-${count.index}"
+  name = "${var.region}-terraform-web-${count.index}"
   vcpu = "1"
   memory = "512"
-  datacenter = "taiping"
+  datacenter = "${var.region}"
   cluster = "production"
   count = "${var.env == "prodution" ? "2" : "0"}"
   time_zone = "Asia/Taipei"
@@ -25,13 +18,4 @@ resource "vsphere_virtual_machine" "web" {
     type = "thin"
     datastore = "tp_NetApp_flra_vmware"
   }
-}
-
-
-output "name" {
-  value = "${vsphere_virtual_machine.web.name}"
-}
-
-output "uuid" {
-  value = "${vsphere_virtual_machine.web.uuid}"
 }
