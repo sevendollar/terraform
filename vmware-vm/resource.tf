@@ -1,9 +1,9 @@
 resource "vsphere_virtual_machine" "web" {
   count = "${var.count}"
-  name = "${var.region}-terraform-web-${count.index}"
+  name = "${var.datacenter}-terraform-web-${count.index}"
   vcpu = "1"
   memory = "512"
-  datacenter = "${var.region}"
+  datacenter = "${var.datacenter}"
   cluster = "production"
   count = "${var.env == "prodution" ? "2" : "0"}"
   time_zone = "Asia/Taipei"

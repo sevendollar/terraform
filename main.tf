@@ -8,14 +8,14 @@ provider "vsphere" {
 module "vmware-vm" {
   source = "github.com/sevendollar/terraform/vmware-vm"
 
-  count = "2"
-  region = "taiping"
-  env = "prodution"
+  count = "${var.vm_count}"
+  datacente= "${var.vm_datacenter}"
+  env = "${var.vm_env}"
 }
 
 module "vmware-folder" {
   source = "github.com/sevendollar/terraform/vmware-folder"
 
   count = "3"
-  region = "taiping"
+  datacente= "${var.vm_datacenter}"
 }

@@ -1,2 +1,2 @@
 variable "count" {}
-variable "region" {}
+variable "datacenter" {}

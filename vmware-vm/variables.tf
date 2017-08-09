@@ -1,4 +1,4 @@
-variable "region" {
+variable "datacenter" {
   description = "vsphere datacenter"
 }
 
