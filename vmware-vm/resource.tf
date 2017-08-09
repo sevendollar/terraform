@@ -5,7 +5,6 @@ resource "vsphere_virtual_machine" "web" {
   memory = "512"
   datacenter = "${var.datacenter}"
   cluster = "production"
-  count = "${var.env == "prodution" ? "2" : "0"}"
   time_zone = "Asia/Taipei"
   domain = "cvl.com.tw"
   dns_servers = "${var.dns}"

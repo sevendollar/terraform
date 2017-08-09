@@ -9,10 +9,5 @@ variable "vm_count" {
 
 variable "vm_datacenter" {
   description = ""
-  default = "3"
-}
-
-variable "vm_env" {
-  description = "how many vms?"
-  default = "3"
+  default = "taiping"
 }

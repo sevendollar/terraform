@@ -10,7 +10,6 @@ module "vmware-vm" {
 
   count = "${var.vm_count}"
   datacenter = "${var.vm_datacenter}"
-  env = "${var.vm_env}"
 }
 
 module "vmware-folder" {
