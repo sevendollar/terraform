@@ -5,9 +5,19 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 
-module "web" {
-  source = "github.com/sevendollar/terraform/web"
+module "vmware-vm" {
+  source = "./vmware-vm"
 
+  count = "3"
   region = "taiping"
-#  env = "test"
+  env = "prodution"
 }
+
+/*
+module "vmware-folder" {
+  source = "./vmware-folder"
+
+  count = "3"
+  region = "taiping"
+}
+*/

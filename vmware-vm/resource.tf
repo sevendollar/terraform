@@ -1,4 +1,5 @@
 resource "vsphere_virtual_machine" "web" {
+  count = "${var.count}"
   name = "${var.region}-terraform-web-${count.index}"
   vcpu = "1"
   memory = "512"
