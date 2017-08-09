@@ -9,7 +9,7 @@ module "vmware-vm" {
   source = "github.com/sevendollar/terraform/vmware-vm"
 
   count = "${var.vm_count}"
-  datacente= "${var.vm_datacenter}"
+  datacenter = "${var.vm_datacenter}"
   env = "${var.vm_env}"
 }
 
@@ -17,5 +17,5 @@ module "vmware-folder" {
   source = "github.com/sevendollar/terraform/vmware-folder"
 
   count = "3"
-  datacente= "${var.vm_datacenter}"
+  datacenter = "${var.vm_datacenter}"
 }
