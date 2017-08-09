@@ -6,18 +6,16 @@ provider "vsphere" {
 }
 
 module "vmware-vm" {
-  source = "./vmware-vm"
+  source = "github.com/sevendollar/terraform/vmware-vm"
 
-  count = "3"
+  count = "2"
   region = "taiping"
   env = "prodution"
 }
 
-/*
 module "vmware-folder" {
-  source = "./vmware-folder"
+  source = "github.com/sevendollar/terraform/vmware-folder"
 
   count = "3"
   region = "taiping"
 }
-*/
