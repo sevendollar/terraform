@@ -10,11 +10,12 @@ module "vmware-vm" {
 
   count = "${var.vm_count}"
   datacenter = "${var.vm_datacenter}"
+  env = "${var.vm_env}"
 }
 
 module "vmware-folder" {
   source = "github.com/sevendollar/terraform/vmware-folder"
 
-  count = "3"
+  count = "${var.vm-folder-count}"
   datacenter = "${var.vm_datacenter}"
 }

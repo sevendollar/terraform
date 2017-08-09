@@ -1,5 +1,6 @@
 resource "vsphere_virtual_machine" "web" {
-  count = "${var.count}"
+#  count = "${var.count}"
+  count = "${var.env == "prodution" ? "${var.count}" : "0" }"
   name = "${var.datacenter}-terraform-web-${count.index}"
   vcpu = "1"
   memory = "512"
