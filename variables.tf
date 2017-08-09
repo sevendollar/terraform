@@ -4,11 +4,11 @@ variable "vsphere_server" {}
 
 variable "vm_env" {
   description = "vmware vsphere enviroment, test or prodution?"
-  default = "test"
+  default = "prodution"
 }
 variable "vm_count" {
   description = "how many vms?"
-  default = "0"
+  default = "5"
 }
 
 variable "vm-folder-count" {

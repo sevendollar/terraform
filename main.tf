@@ -18,4 +18,5 @@ module "vmware-folder" {
 
   count = "${var.vm-folder-count}"
   datacenter = "${var.vm_datacenter}"
+  env = "${var.vm_env}"
 }
