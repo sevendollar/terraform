@@ -7,7 +7,7 @@ variable "count" {
 }
 
 variable "env" {
-  description "enviroment: test or prodution"
+  description = "enviroment: test or prodution"
 }
 
 variable "dns" {

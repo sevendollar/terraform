@@ -3,7 +3,7 @@ variable "vsphere_password" {}
 variable "vsphere_server" {}
 
 variable "vm_env" {
-  description "vmware vsphere enviroment, test or prodution?"
+  description = "vmware vsphere enviroment, test or prodution?"
   default = "test"
 }
 variable "vm_count" {
