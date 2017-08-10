@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL maintainer="sevendollar@gmail.com"
-LABEL slack team="techtalk-tw.slack.com"
+LABEL slack team's invite link="https://join.slack.com/t/techtalk-tw/shared_invite/MjI1ODIzNzU1MzE5LTE1MDIzNTMxMTQtNTFiZDA3YjkyMA"
 WORKDIR /terraform
 RUN apt-get update && \
     apt-get install -y unzip curl git && \
