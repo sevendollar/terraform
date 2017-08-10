@@ -1,6 +1,5 @@
 FROM ubuntu:latest
 LABEL maintainer="sevendollar@gmail.com"
-LABEL slack="techtalk-tw.slack.com"
 WORKDIR /terraform
 RUN apt-get update && \
     apt-get install -y unzip curl git && \
