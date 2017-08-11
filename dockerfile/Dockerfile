@@ -8,4 +8,4 @@ RUN apk --update add --no-cache curl unzip git && \
     mv terraform /usr/local/bin/ && \
     rm tf* && \
     rm -rf /var/lib/apt/lists/*
-ENTRYPOINT ["terraform"]
+CMD ["terraform"]
