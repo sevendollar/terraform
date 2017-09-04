@@ -1,0 +1,3 @@
+matchbox_http_endpoint = "http://10.5.1.5:8080"
+matchbox_rpc_endpoint = "10.5.1.5:8081"
+ssh_authorized_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKfDqH0x7z1svr33vlssCQFkROhBB//7F4gN10JFut4vSFnEGEaDG+L4kMpE6dPuF1hTIaZ7TIawVjjRm8VRCC4pAyYHwgVoIee+YgC08owobRz8iC9gkkxA1jRQpAe/ZSYkfpa22XUCzJOu1sRJXbennlosw1ttdT8OH8dznaRVe5I69mpx3VVdh1Xqza2QLZPLvYlwoCzWdIs4zyS2W/ZGDDzxq46LEv3FfJW/hTn/FjCoHe+lrZPkK+WAfSqy3t9aVhtrHNWhdFpn4X5DwpRQDtJCCDN/qXw6rYCCH3xrrKb5r7W3jLFCstAZIBuWPZzuJeLCdr80YvTdB0j+XF jeffl@jumper-taiping"
