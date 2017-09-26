@@ -1,9 +1,9 @@
 resource "vsphere_virtual_machine" "etcd" {
 #  count = "${var.count}"
 #  count = "${var.env == "prodution" ? "${var.count}" : "0" }"
-  name = "${var.module_name}-coreos-etcd-${var.host_name}"
-  vcpu = "2"
-  memory = "8192"
+  name = "${var.datacenter}-coreos-${var.name}"
+  vcpu = "${var.vcpu}"
+  memory = "${var.memory}"
   datacenter = "${var.datacenter}"
   cluster = "production"
   time_zone = "Asia/Taipei"
@@ -13,14 +13,14 @@ resource "vsphere_virtual_machine" "etcd" {
 
   network_interface {
     label = "vlan501"
-    mac_address = "${var.mac_addr}"
+    mac_address = "${var.mac_address}"
   }
 
   disk {
 #    template = "taiping_image_coreos"
     type = "thin"
     size = "16"
-    name = "vmdk-etcd-${var.host_name}"
+    name = "vmdk-etcd-${var.name}"
     datastore = "tp_NetApp_flra_vmware"
   }
 }

@@ -1,9 +1,4 @@
-variable "module_name" {
-  description = "module name"
-  default = "terraform"
-}
-
-variable "host_name" {
+variable "name" {
   description = "host name"
   default = ""
 }
@@ -13,7 +8,7 @@ variable "datacenter" {
   default = "taiping"
 }
 
-variable "mac_addr" {
+variable "mac_address" {
   description = ""
 }
 
@@ -24,6 +19,14 @@ variable "dns" {
 
 variable "folder" {
   default = ""
+}
+
+variable "vcpu" {
+  default = "1"
+}
+
+variable "memory" {
+  default = "1024"
 }
 
 /*
