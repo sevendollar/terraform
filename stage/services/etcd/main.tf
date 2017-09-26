@@ -11,7 +11,7 @@ resource "vsphere_folder" "etcd" {
 }
 
 module "etcd-1" {
-  source = "/modules/vmware-vm"
+  source = "../../../modules/vmware-vm"
 
   host_name = "1"
   mac_addr = "00:50:56:af:74:77"
@@ -19,7 +19,7 @@ module "etcd-1" {
 }
 
 module "etcd-2" {
-  source = "/modules/vmware-vm"
+  source = "../../../modules/vmware-vm"
 
   host_name = "2"
   mac_addr = "00:50:56:af:f3:4a"
@@ -27,7 +27,7 @@ module "etcd-2" {
 }
 
 module "etcd-3" {
-  source = "/modules/vmware-vm"
+  source = "../../../modules/vmware-vm"
 
   host_name = "3"
   mac_addr = "00:50:56:af:0f:af"
