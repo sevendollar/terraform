@@ -29,11 +29,11 @@ variable "memory" {
   default = "1024"
 }
 
-/*
 variable "count" {
   description = "how many vms will it be?"
+  default = "1"
 }
-
+/*
 variable "env" {
   description = "enviroment: test or prodution"
 }
