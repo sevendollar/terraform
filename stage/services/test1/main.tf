@@ -10,10 +10,9 @@ resource "vsphere_folder" "test" {
   path = "jeff_test1"
 }
 
-module "test" {
+module "test_vm" {
   source = "../../../modules/vmware-vm"
 
-  count = 3
   name = "test"
   mac_address = ""
   folder = "${vsphere_folder.test.path}"

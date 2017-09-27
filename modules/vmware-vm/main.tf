@@ -1,4 +1,4 @@
-resource "vsphere_virtual_machine" "etcd" {
+resource "vsphere_virtual_machine" "t1" {
 #  count = "${var.env == "prodution" ? "${var.count}" : "0" }"
   count = "${var.count}"
   name = "${var.datacenter}-coreos-${md5("${var.name}${count.index}")}"
@@ -22,5 +22,9 @@ resource "vsphere_virtual_machine" "etcd" {
     size = "16"
     name = "vmdk-coreos-${md5("${var.name}${count.index}")}"
     datastore = "tp_NetApp_flra_vmware"
+  }
+
+  lifecycle {
+    create_before_destroy = true
   }
 }
