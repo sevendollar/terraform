@@ -1,7 +1,7 @@
 resource "vsphere_virtual_machine" "t1" {
 #  count = "${var.env == "prodution" ? "${var.count}" : "0" }"
   count = "${var.count}"
-  name = "${var.datacenter}-coreos-${md5("${var.name}${count.index}")}"
+  name = "${var.datacenter}-coreos-${var.name}"
   vcpu = "${var.vcpu}"
   memory = "${var.memory}"
   datacenter = "${var.datacenter}"
@@ -19,7 +19,7 @@ resource "vsphere_virtual_machine" "t1" {
   disk {
 #    template = "taiping_image_coreos"
     type = "thin"
-    size = "16"
+    size = "${var.size}"
     name = "vmdk-coreos-${md5("${var.name}${count.index}")}"
     datastore = "tp_NetApp_flra_vmware"
   }

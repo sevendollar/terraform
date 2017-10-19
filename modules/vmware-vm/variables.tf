@@ -29,6 +29,10 @@ variable "memory" {
   default = "1024"
 }
 
+variable "size" {
+  default = "16"
+}
+
 variable "count" {
   description = "how many vms will it be?"
   default = "1"
